@@ -6,18 +6,20 @@
 // Dichiariamo chi ha vinto.
 
 // faccio scegliere all'utente se vuole pari o dispari
-    //dichairo la variabile e mi faccio mandare in input la scelta
-    let strinChoice = prompt('scegli pari o dispari e digita la scelta').toLowerCase(); //string
+    //inizializzo la variabile string Choice
+    let stringChoice ='';
 
     // dichiaro una variabile di controllo per la variabile strinChoice dell'utente
     let choice = false; //boolean
 
     // controllo la scelta dell'utente per capire se ha scelto pari o dispari controllando che vengano inseriti solo pari o dispari
-    do {
-        if (strinChoice === 'pari'){
+    do {        
+        stringChoice = prompt('scegli pari o dispari e digita la scelta') //string
+        if (stringChoice === 'pari'){
             choice = true
         }
-}
+    } while ((stringChoice !== 'pari' && stringChoice !== 'dispari'));
+
 // faccioscegliere all'utente un numero da 1 a 5 
 
 // assegno il riusltato della funzione numero random ad una variabile 
