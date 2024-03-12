@@ -13,7 +13,9 @@ const word = prompt('inserisci una parola'); //string
     const isPalindrome = palindromeFunction(word); //boolean
 
     // controllo se palindroma
-    if (isPalindrome === true){
+    if (isPalindrome === undefined){
+        console.log ('La parola ' + word + ' è troppo corta');
+    } else if (isPalindrome === true){
         console.log ('La parola ' + word + ' è palindroma!!');
     } else {
         console.log ('La parola ' + word + ' non è palindroma!!');
@@ -21,21 +23,26 @@ const word = prompt('inserisci una parola'); //string
 
 // funzione parola palindroma
     function palindromeFunction(string){
-        //riassegno a tringa se stessa senza tenere conto dei caratteri maiuscoli
+        //riassegno a stringa se stessa senza tenere conto dei caratteri maiuscoli
         string = string.toLowerCase();
-        
+
         // creo una variabile con l'ultimo indice della parola string
         let stringLastIndex = string.length -1; //number
 
         // dichiaro la variabile che mi servirà per salvare la parola specchiata
         let reverseString =''; //string
+        
+        //controllo che la parola sia più lunga di un carattere 
+        if(string.length > 1){ 
+            // inverto la parola in ingresso leggendo ogni lettera da cui è composta e salvandola in una nuova parola 
+            for (let i = 0; i < string.length; i++){
+                reverseString += string[stringLastIndex]; //string
+                stringLastIndex--;
+            }
 
-        // inverto la parola in ingresso leggendo ogni lettera da cui è composta e salvandola in una nuova parola 
-        for (let i = 0; i < string.length; i++){
-            reverseString += string[stringLastIndex]; //string
-            stringLastIndex--;
+            // ritorno del risultato
+            return string === reverseString; //boolean
+        } else {
+            return undefined;
         }
-
-        // ritorno del risultato
-        return string === reverseString; //boolean
     }
