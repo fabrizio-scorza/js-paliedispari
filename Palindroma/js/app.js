@@ -21,18 +21,21 @@ const word = prompt('inserisci una parola'); //string
 
 // funzione parola palindroma
     function palindromeFunction(string){
+        //riassegno a tringa se stessa senza tenere conto dei caratteri maiuscoli
+        string = string.toLowerCase();
+        
         // creo una variabile con l'ultimo indice della parola string
         let stringLastIndex = string.length -1; //number
 
         // dichiaro la variabile che mi servirà per salvare la parola specchiata
-        let reversString =''; //string
+        let reverseString =''; //string
 
         // inverto la parola in ingresso leggendo ogni lettera da cui è composta e salvandola in una nuova parola 
         for (let i = 0; i < string.length; i++){
-            reversString += string[stringLastIndex]; //string
+            reverseString += string[stringLastIndex]; //string
             stringLastIndex--;
         }
 
-        // ritorno il il risultato del confronto tra string e reverse string che in caso di parola palindroma sarà true
-        return string === reversString; //boolean
+        // ritorno del risultato
+        return string === reverseString; //boolean
     }
