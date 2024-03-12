@@ -4,3 +4,35 @@
 // la funzione deve ritornare true se la parola è palindroma
 // deve ritornare false se la parola non è palindroma
 // alla fine stampate in console un messaggio per dire all’utente il risultato del controllo
+
+// chiedo all'utente di inserire tramite prompt una parola e la salvo in una variabile
+const word = prompt('inserisci una parola'); //string
+
+// controllo se il risultato della funzione è true o false
+    //assegno il risultato della funzione ad una variabile
+    const isPalindrome = palindromeFunction(word); //boolean
+
+    // controllo se palindroma
+    if (isPalindrome === true){
+        console.log ('La parola ' + word + ' è palindroma!!');
+    } else {
+        console.log ('La parola ' + word + ' non è palindroma!!');
+    }
+
+// funzione parola palindroma
+    function palindromeFunction(string){
+        // creo una variabile con l'ultimo indice della parola string
+        let stringLastIndex = string.length -1; //number
+
+        // dichiaro la variabile che mi servirà per salvare la parola specchiata
+        let reversString =''; //string
+
+        // inverto la parola in ingresso leggendo ogni lettera da cui è composta e salvandola in una nuova parola 
+        for (let i = 0; i < string.length; i++){
+            reversString += string[stringLastIndex]; //string
+            stringLastIndex--;
+        }
+
+        // ritorno il il risultato del confronto tra string e reverse string che in caso di parola palindroma sarà true
+        return string === reversString; //boolean
+    }
