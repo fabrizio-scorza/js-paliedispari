@@ -7,12 +7,12 @@
 
 // faccio scegliere all'utente se vuole pari o dispari
     //inizializzo la variabile string Choice
-    let stringChoice ='';
+    let stringChoice =''; //string
 
     // dichiaro una variabile di controllo per la variabile strinChoice dell'utente
     let choice = false; //boolean
 
-    // controllo la scelta dell'utente per capire se ha scelto pari o dispari controllando che vengano inseriti solo pari o dispari
+    // controllo la scelta dell'utente per capire se ha scelto pari o dispari controllando che vengano inseriti solo pari o dispari come valori della stringa
     do {        
         stringChoice = prompt('scegli pari o dispari e digita la scelta') //string
         if (stringChoice === 'pari'){
@@ -20,15 +20,25 @@
         }
     } while ((stringChoice !== 'pari' && stringChoice !== 'dispari'));
 
-// faccioscegliere all'utente un numero da 1 a 5 
+// faccio scegliere all'utente un numero da 1 a 5 
+    // inizializzo una variabile numero dell'utente 
+    let userNum = 0; //number
+
+    //richiedo all'utente un numero finché non mi inserisce un numero valido (compreso tra 1 e 5)
+    do {
+        userNum = parseInt(prompt('Inserisci un numero da 1 a 5'));
+    } while (!(userNum > 0 && userNum <=5));
 
 // assegno il riusltato della funzione numero random ad una variabile 
 const computerNum = randomNum();
 
 //sommo i due numeri e stabilisco se la somma è pari o dispari
+const summ = (computerNum + userNum);
 
 //decreto il vincitore
+ console.log (computerNum,userNum,summ);
 
+ 
 //funzione numero random 
 function randomNum (){
     //dichiaro una variabile che conterrà il numero random generato
