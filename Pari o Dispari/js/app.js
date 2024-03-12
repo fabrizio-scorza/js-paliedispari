@@ -30,15 +30,35 @@
     } while (!(userNum > 0 && userNum <=5));
 
 // assegno il riusltato della funzione numero random ad una variabile 
-const computerNum = randomNum();
+const computerNum = randomNum(); //number
 
 //sommo i due numeri e stabilisco se la somma è pari o dispari
-const summ = (computerNum + userNum);
+const summ = (computerNum + userNum); //number
 
+const theSummIsEven = isEven(summ); //boolean
 //decreto il vincitore
- console.log (computerNum,userNum,summ);
+console.log ('Il numero del Computer è: ' + computerNum + '.' + ' Il tuo numero è: ' + userNum +'.');
 
- 
+if (theSummIsEven === true){
+    console.log(summ + ' è PARI.');
+} else {
+    console.log(summ + ' è DISPARI.');
+}
+if(choice === true){
+    console.log('Hai scelto pari');
+} else {
+    console.log('Hai scelto dispari');
+}
+//se la scelta dell'utente corrisponde al risultato allora il giocatore ha vinto alrimenti ha perso
+if(theSummIsEven === choice){        
+    console.log ('HAI VINTO')
+} else {
+    console.log ('HAI PERSO');
+    }
+
+
+    
+
 //funzione numero random 
 function randomNum (){
     //dichiaro una variabile che conterrà il numero random generato
