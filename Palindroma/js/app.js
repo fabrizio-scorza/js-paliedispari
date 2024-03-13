@@ -22,7 +22,7 @@ const word = prompt('inserisci una parola').toLowerCase(); //string
     // controllo se palindroma
     if (isPalindrome === true){
         console.log ('La parola ' + word + ' è palindroma!!');
-    } else {
+    } else if (isPalindrome === false){
         console.log ('La parola ' + word + ' non è palindroma!!');
     }
 
