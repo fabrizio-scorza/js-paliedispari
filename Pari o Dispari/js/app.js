@@ -39,12 +39,12 @@ const theSummIsEven = isEven(summ); //boolean
 //decreto il vincitore
 console.log ('Il numero del Computer è: ' + computerNum + '.' + ' Il tuo numero è: ' + userNum +'.');
 
-if (theSummIsEven === true){
+if (theSummIsEven){
     console.log(summ + ' è PARI.');
 } else {
     console.log(summ + ' è DISPARI.');
 }
-if(choice === true){
+if(choice){
     console.log('Hai scelto pari');
 } else {
     console.log('Hai scelto dispari');
