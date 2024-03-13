@@ -6,7 +6,7 @@
 // alla fine stampate in console un messaggio per dire all’utente il risultato del controllo
 
 // chiedo all'utente di inserire tramite prompt una parola e la salvo in una variabile
-const word = prompt('inserisci una parola').toLowerCase(); //string
+const word = prompt('inserisci una parola'); //string
 
 // controllo se il risultato della funzione è true o false
     //inizializzo una variabile
@@ -31,18 +31,20 @@ const word = prompt('inserisci una parola').toLowerCase(); //string
         // creo una variabile con l'ultimo indice della parola string
         let stringLastIndex = string.length -1; //number
 
-        // dichiaro la variabile che mi servirà per salvare la parola specchiata
-        let reverseString =''; //string
-        
-        //controllo che la parola sia più lunga di un carattere 
-        if(string.length > 1){ 
-            // inverto la parola in ingresso leggendo ogni lettera da cui è composta e salvandola in una nuova parola 
-            for (let i = 0; i < string.length; i++){
-                reverseString += string[stringLastIndex]; //string
-                stringLastIndex--;
-            }
+        // controllo lowercase e spazi
+        string = string.toLowerCase(); //string
+        string = string.replaceAll(' ',''); //string
 
-            // ritorno del risultato
-            return string === reverseString; //boolean
+        // dichiaro la variabile che mi servirà per salvare la parola specchiata
+        let reverseString =''; //string        
+        
+        // inverto la parola in ingresso leggendo ogni lettera da cui è composta e salvandola in una nuova parola 
+        for (let i = 0; i < string.length; i++){   // CORREZIONE  LEZIONE possibilità di inverte le espressioni di controllo (i = string.lenght i>=0 i--)  
+            reverseString += string[stringLastIndex]; //string  //CORREZIONE LEZIONE tenendo le condizioni in questo modo: text.at(-1-i)
+            stringLastIndex--;
         }
-    }
+
+        // ritorno del risultato
+        return string === reverseString; //boolean
+        
+    } 
