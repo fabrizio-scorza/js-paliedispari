@@ -6,16 +6,21 @@
 // alla fine stampate in console un messaggio per dire all’utente il risultato del controllo
 
 // chiedo all'utente di inserire tramite prompt una parola e la salvo in una variabile
-const word = prompt('inserisci una parola'); //string
+const word = prompt('inserisci una parola').toLowerCase(); //string
 
 // controllo se il risultato della funzione è true o false
-    //assegno il risultato della funzione ad una variabile
-    const isPalindrome = palindromeFunction(word); //boolean
+    //inizializzo una variabile
+    let isPalindrome = 0;
+
+    //se lparola è troppo corta lo dice
+    if (word.length > 1){
+         isPalindrome = palindromeFunction(word); //boolean
+    } else { 
+        console.log ('La parola ' + word + ' è troppo corta');
+    }
 
     // controllo se palindroma
-    if (isPalindrome === undefined){
-        console.log ('La parola ' + word + ' è troppo corta');
-    } else if (isPalindrome === true){
+    if (isPalindrome === true){
         console.log ('La parola ' + word + ' è palindroma!!');
     } else {
         console.log ('La parola ' + word + ' non è palindroma!!');
@@ -23,9 +28,6 @@ const word = prompt('inserisci una parola'); //string
 
 // funzione parola palindroma
     function palindromeFunction(string){
-        //riassegno a stringa se stessa senza tenere conto dei caratteri maiuscoli
-        string = string.toLowerCase();
-
         // creo una variabile con l'ultimo indice della parola string
         let stringLastIndex = string.length -1; //number
 
@@ -42,7 +44,5 @@ const word = prompt('inserisci una parola'); //string
 
             // ritorno del risultato
             return string === reverseString; //boolean
-        } else {
-            return undefined;
         }
     }
