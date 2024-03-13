@@ -30,7 +30,7 @@
     } while (!(userNum > 0 && userNum <=5));
 
 // assegno il riusltato della funzione numero random ad una variabile 
-const computerNum = randomNum(); //number
+const computerNum = randomNum(1,5); //number
 
 //sommo i due numeri e stabilisco se la somma è pari o dispari
 const summ = (computerNum + userNum); //number
@@ -60,12 +60,12 @@ if(theSummIsEven === choice){
     
 
 //funzione numero random 
-function randomNum (){
+function randomNum (min,max){
     //dichiaro una variabile che conterrà il numero random generato
-    const oneToFive = Math.floor(Math.random()* 5 + 1); //number
+    const rangeRandom = Math.floor(Math.random()* (max - min + 1) + min); //number
 
     //ritorna un numero random da 1 a 5
-    return oneToFive;
+    return rangeRandom;
 }
 
 //funzione pari o dispari
